@@ -107,3 +107,16 @@ export default Example2;
 
 ***useEffect解绑副作用***
 学习<font color="red">React Hooks</font> 时，我们要改掉生命周期函数的概念（人往往有先入为主的毛病，所以很难改掉），因为<font color="red">Hooks</font>叫它副作用，所以<font color="red">componentWillUnmount</font>也可以理解成解绑副作用。这里为了演示用<font color="red">useEffect</font>来实现类似<font color="red">componentWillUnmount</font>效果，先安装<font color="red">React-Router</font>路由,进入项目根本录，使用<font color="red">npm</font>进行安装。
+
+# v5.0 useContext父子组件传值：
+
+有了<font color="red">useState</font>和<font color="red">useEffect</font>已经可以实现大部分的业务逻辑了，但是<font color="red">React Hooks</font>中还是有很多好用的<font color="red">Hooks</font>函数的，比如<font color="red">useContext</font>和<font color="red">useReducer</font>。
+
+在用类声明组件时，父子组件的传值是通过组件属性和<font color="red">props</font>进行的，那现在使用方法(Function)来声明组件，已经没有了<font color="red">constructor</font>构造函数也就没有了props的接收，那父子组件的传值就成了一个问题。<font color="red">React Hooks</font> 为我们准备了<font color="red">useContext</font>。这节课就学习一下<font color="red">useContext</font>，它可以帮助我们跨越组件层级直接传递变量，实现共享。需要注意的是<font color="red">useContext</font>和<font color="red">redux</font>的作用是不同的，一个解决的是组件之间值传递的问题，一个是应用中统一管理状态的问题，但通过和<font color="red">useReducer</font>的配合使用，可以实现类似<font color="red">Redux</font>的作用。
+
+这就好比玩游戏时有很多英雄，英雄的最总目的都是赢得比赛，但是作用不同，有负责输出的，有负责抗伤害的，有负责治疗的。
+> <font color="red">Context</font>的作用就是对它所包含的组件树提供全局共享数据的一种技术。
+
+请看Example4.js
+
+
