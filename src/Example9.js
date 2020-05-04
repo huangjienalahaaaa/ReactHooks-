@@ -1,35 +1,43 @@
-// useRef保存普通变量
+/**
+ * 1.useEffect->生命周期
+ * 2.useCallback->用来优化我们的方法的
+ * 
+ */
 
-//引入useEffect
-import React, { useRef, useState, useEffect } from 'react';
-function Example9() {
-    const inputEl = useRef(null)
-    const onButtonClick = () => {
-        inputEl.current.value = "Hello ,useRef"
-        console.log(inputEl)
-    }
-    //-----------关键代码--------start
-    const [text, setText] = useState('jspang')
+import React, { useState, useEffect, useCallback } from 'react';
 
-    //定义变量，用来保存ref
-    const textRef = useRef()
-
-    useEffect(() => {
-        //保存变量
-        textRef.current = text;
-        console.log('textRef.current:', textRef.current)
+// 3.自定义Hooks函数 -> 自定义有个规则：就是必须用use开头
+function useWinSize() {
+    const [size, setSize] = useState({
+        width: document.documentElement.clientWidth,
+        height: document.documentElement.clientHeight
     })
-    //----------关键代码--------------end
+    // 4.useCallback能缓存我们的方法
+    const onResize = useCallback(() => {
+        setSize({
+            width: document.documentElement.clientWidth,
+            height: document.documentElement.clientHeight
+        })
+    }, [])
+    useEffect(() => {
+        // 进来时开启监听事件
+        window.addEventListener('resize', onResize)
+        // 离开时是关闭监听事件
+        return () => {
+            window.removeEventListener('resize', onResize)
+        }
+    }, [])
+
+    return size;
+
+}
+
+function Example9() {
+
+    const size = useWinSize()
     return (
-        <>
-            {/*保存input的ref到inputEl */}
-            <input ref={inputEl} type="text" />
-            <button onClick={onButtonClick}>在input上展示文字</button>
-            <br />
-            <br />
-            <input value={text} onChange={(e) => { setText(e.target.value) }} />
-        </>
+        <div>页面Size:{size.width}x{size.height}</div>
     )
 }
 
-export default Example9
+export default Example9 

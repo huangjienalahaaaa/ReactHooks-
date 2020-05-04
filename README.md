@@ -180,3 +180,7 @@ function countReducer(state, action) {
 * 用<font color="red">useRef</font>获取React JSX中的DOM元素，获取后你就可以控制DOM的任何东西了。但是一般不建议这样来作，React界面的变化可以通过状态来控制。
 
 * 用<font color="red">useRef</font>来保存变量，这个在工作中也很少能用到，我们有了<font color="red">useContext</font>这样的保存其实意义不大，但是这是学习，也要把这个特性讲一下。
+
+# v11.0 自定义Hooks函数：
+
+其实自定义Hooks函数和用Hooks创建组件很相似，跟我们平时用JavaScript写函数几乎一模一样，可能就是多了些<font color="red">React Hooks</font>的特性，自定义Hooks函数偏向于功能，而组件偏向于界面和业务逻辑。由于差别不大，所以使用起来也是很随意的。如果是小型项目是可以的，但是如果项目足够复杂，这会让项目结构不够清晰。所以学习自定义Hooks函数还是很有必要的。
