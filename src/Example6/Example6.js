@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import ShowArea from './ShowArea';
 import Buttons from './Buttons';
-import { Color } from './color';   //引入Color组件
+import { Color } from './color';
 
 function Example6() {
     return (

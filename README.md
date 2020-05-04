@@ -160,3 +160,10 @@ function countReducer(state, action) {
 <font color="red">useReducer</font>：通过action的传递，更新复杂逻辑的状态，主要是可以实现类似Redux中的Reducer部分，实现业务逻辑的可行性。
 
 经过我们在理论上的分析是完全可行的，接下来我们就用一个简单实例来看一下具体的实现方法。那这节课先实现useContext部分（也就是状态共享），下节再继续讲解useReducer部分（控制业务逻辑）。
+
+
+# v8.0 useReducer代替redux小案例-2：
+
+通过上节课的学习，用useContext实现了Redux状态共享的能力，这节课看一下如何使用useReducer来实现业务逻辑的控制。
+
+需要注意的是这节课的内容是接着上节课的，需要你把上节课的代码部分完成，才可以继续学习。如果不学习我相信有可能你会听不懂。
