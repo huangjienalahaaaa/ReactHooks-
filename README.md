@@ -173,5 +173,10 @@ function countReducer(state, action) {
 
 <font color="red">useMemo</font>主要用来解决使用React hooks产生的无用渲染的性能问题。使用function的形式来声明组件，失去了<font color="red">shouldCompnentUpdate</font>（在组件更新之前）这个生命周期，也就是说我们没有办法通过组件更新前条件来决定组件是否更新。而且在函数组件中，也不再区分<font color="red">mount</font>和<font color="red">update</font>两个状态，这意味着函数组件的每一次调用都会执行内部的所有逻辑，就带来了非常大的性能损耗。<font color="red">useMemo</font>和<font color="red">useCallback</font>都是解决上述性能问题的，这节课先学习<font color="red">useMemo</font>.
 
+# v10.0 useRef获取DOM和保存变量：
 
-<font color="red"></font>
+<font color="red">useRef</font>在工作中虽然用的不多，但是也不能缺少。它有两个主要的作用:
+
+* 用<font color="red">useRef</font>获取React JSX中的DOM元素，获取后你就可以控制DOM的任何东西了。但是一般不建议这样来作，React界面的变化可以通过状态来控制。
+
+* 用<font color="red">useRef</font>来保存变量，这个在工作中也很少能用到，我们有了<font color="red">useContext</font>这样的保存其实意义不大，但是这是学习，也要把这个特性讲一下。
