@@ -167,3 +167,11 @@ function countReducer(state, action) {
 通过上节课的学习，用useContext实现了Redux状态共享的能力，这节课看一下如何使用useReducer来实现业务逻辑的控制。
 
 需要注意的是这节课的内容是接着上节课的，需要你把上节课的代码部分完成，才可以继续学习。如果不学习我相信有可能你会听不懂。
+
+# v9.0 useMemo优化React Hooks程序性能：
+
+
+<font color="red">useMemo</font>主要用来解决使用React hooks产生的无用渲染的性能问题。使用function的形式来声明组件，失去了<font color="red">shouldCompnentUpdate</font>（在组件更新之前）这个生命周期，也就是说我们没有办法通过组件更新前条件来决定组件是否更新。而且在函数组件中，也不再区分<font color="red">mount</font>和<font color="red">update</font>两个状态，这意味着函数组件的每一次调用都会执行内部的所有逻辑，就带来了非常大的性能损耗。<font color="red">useMemo</font>和<font color="red">useCallback</font>都是解决上述性能问题的，这节课先学习<font color="red">useMemo</font>.
+
+
+<font color="red"></font>
