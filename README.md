@@ -120,3 +120,29 @@ export default Example2;
 请看Example4.js
 
 
+# v6.0 useReducer介绍和简单使用：
+
+
+上节课学习了useContext函数，那这节课开始学习一下useReducer，因为他们两个很像，并且合作可以完成类似的Redux库的操作。在开发中使用useReducer可以让代码具有更好的可读性和可维护性，并且会给测试提供方便。那我们彻底的学习一下useReducer。这节课我们只是简单的学习一下useReducer语法和使用方法，尽量避免Redux的一些操作。这样讲更容易让不了解Redux的小伙伴接受。
+
+***reducer到底是什么？***
+
+为了更好的理解useReducer，所以先要了解JavaScript里的Redcuer是什么。它的兴起是从Redux广泛使用开始的，但不仅仅存在Redux中，可以使用冈的JavaScript来完成Reducer操作。那reducer其实就是一个函数，这个函数接收两个参数，一个是状态，一个用来控制业务逻辑的判断参数。我们举一个最简单的例子。
+
+```javascript
+function countReducer(state, action) {
+    switch(action.type) {
+        case 'add':
+            return state + 1;
+        case 'sub':
+            return state - 1;
+        default: 
+            return state;
+    }
+}
+```
+上面的代码就是Reducer，你主要理解的就是这种形式和两个参数的作用，一个参数是状态，一个参数是如何控制状态。
+
+***useReducer的使用***
+
+了解reducer的含义后，就可以讲useReducer了，它也是React hooks提供的函数，可以增强我们的Reducer，实现类似Redux的功能。我们新建一个Example5.js的文件，然后用useReducer实现计数器的加减双向操作。
