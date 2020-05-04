@@ -146,3 +146,17 @@ function countReducer(state, action) {
 ***useReducer的使用***
 
 了解reducer的含义后，就可以讲useReducer了，它也是React hooks提供的函数，可以增强我们的Reducer，实现类似Redux的功能。我们新建一个Example5.js的文件，然后用useReducer实现计数器的加减双向操作。
+
+# v7.0 useReducer代替redux小案例-1：
+
+
+使用useContext和useReducer是可以实现类似Redux的效果，并且一些简单的个人项目，完全可以用下面的方案代替Redux，这种做法要比Redux简单一些。因为useContext和useReducer在前两节课已经学习过了，所以我们这节课把精力就放在如何模拟出Redux的效果。如果你目前还不能掌握基本的语法，可以再复习一下前两节的知识点。
+
+***理论上的可行性：***
+我们先从理论层面看看替代<font color="red">Redux</font>的可能性，其实如果你对两个函数有所了解，只要我们巧妙的结合，这种替代方案是完全可行的。
+
+<font color="red">useContext</font>：可访问全局状态，避免一层层的传递状态。这符合Redux其中的一项规则，就是状态全局化，并能统一管理。
+
+<font color="red">useReducer</font>：通过action的传递，更新复杂逻辑的状态，主要是可以实现类似Redux中的Reducer部分，实现业务逻辑的可行性。
+
+经过我们在理论上的分析是完全可行的，接下来我们就用一个简单实例来看一下具体的实现方法。那这节课先实现useContext部分（也就是状态共享），下节再继续讲解useReducer部分（控制业务逻辑）。
