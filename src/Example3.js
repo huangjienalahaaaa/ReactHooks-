@@ -1,5 +1,3 @@
-
-// 用class的方式为计数器增加生命周期函数
 import React, { Component } from 'react';
 
 class Example3 extends Component {

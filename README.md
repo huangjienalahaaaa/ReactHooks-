@@ -100,3 +100,10 @@ export default Example2;
 1. React首次渲染和之后的每次渲染都会调用一遍useEffect函数，而之前我们要用两个生命周期函数分别表示首次渲染(componentDidMonut)和更新导致的重新渲染(componentDidUpdate)。
 
 2. useEffect中定义的函数的执行不会阻碍浏览器更新视图，也就是说这些函数时异步执行的，而componentDidMonut和componentDidUpdate中的代码都是同步执行的。个人认为这个有好处也有坏处吧，比如我们要根据页面的大小，然后绘制当前弹出窗口的大小，如果时异步的就不好操作了。
+
+# v4.0 useEffect 实现 componentWillUnmount生命周期函数：
+
+在写React应用的时候，在组件中经常用到componentWillUnmount生命周期函数（组件将要被卸载时执行）。比如我们的定时器要清空，避免发生内存泄漏;比如登录状态要取消掉，避免下次进入信息出错。所以这个生命周期函数也是必不可少的，这节课就来用useEffect来实现这个生命周期函数,并讲解一下useEffect容易踩的坑。
+
+***useEffect解绑副作用***
+学习<font color="red">React Hooks</font> 时，我们要改掉生命周期函数的概念（人往往有先入为主的毛病，所以很难改掉），因为<font color="red">Hooks</font>叫它副作用，所以<font color="red">componentWillUnmount</font>也可以理解成解绑副作用。这里为了演示用<font color="red">useEffect</font>来实现类似<font color="red">componentWillUnmount</font>效果，先安装<font color="red">React-Router</font>路由,进入项目根本录，使用<font color="red">npm</font>进行安装。
